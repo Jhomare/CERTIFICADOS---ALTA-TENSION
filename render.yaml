@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: certificaciones-sistema
+    env: java
+    buildCommand: "mvn clean package"
+    startCommand: "java -jar target/certificaciones-sistema-0.0.1-SNAPSHOT.jar"
+    branch: main
+    autoDeploy: true
+    envVars:
+      - key: DB_HOST
+        value: tu-host-de-mysql
+      - key: DB_USER
+        value: tu-usuario
+      - key: DB_PASSWORD
+        value: tu-clave
+      - key: EMAIL_USER
+        value: tu-correo
+      - key: EMAIL_PASSWORD
+        value: tu-clave-correo
